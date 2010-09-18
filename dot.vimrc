@@ -21,6 +21,8 @@ set shiftwidth=4
 set expandtab
 " <BS>で改行削除に
 set backspace=indent,eol,start
+" ステータスライン表示
+set laststatus=2
 
 " 以前開いていたときのカーソル位置を復元する
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -65,8 +67,8 @@ call s:HighlightSpaces()
 autocmd WinEnter * call s:HighlightSpaces()
 
 " 挿入モード時、ステータスラインの色を変える
-autocmd InsertEnter * highlight StatusLine ctermfg=red
-autocmd InsertLeave * highlight StatusLine ctermfg=white
+autocmd InsertEnter * highlight StatusLine ctermfg=red guibg=red
+autocmd InsertLeave * highlight StatusLine ctermfg=white guibg=white
 
 "
 " 検索
