@@ -1,13 +1,16 @@
-set nocompatible
+" 
+" init
+"
+
+set nocompatible    " vim 拡張機能ON
+syntax on           " 色づけON
+filetype on         
+filetype indent on
+filetype plugin on
 
 " ディレクトリ設定
 set backupdir=$HOME/tmp/vim/backup
 set directory=$HOME/tmp/vim/swap
-
-syntax on
-filetype on
-filetype indent on
-filetype plugin on
 
 "
 " エディタ設定
@@ -16,8 +19,8 @@ filetype plugin on
 " 行番号を非表示 (number:表示)
 set number
 " tab表示文字数
-set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 " <BS>で改行削除に
 set backspace=indent,eol,start
@@ -102,7 +105,11 @@ cmap <A-v> <C-R>*
 imap <C-Space> <C-x><C-o>
 
 " Yで行末までヤンク
-map Y y$
+nnoremap Y y$
+" これがないとyankringでYのmappingが上書きされて反映されない
+function! YRRunAfterMaps()
+    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
 
 " バッファ移動
 map <F2> :bnext<CR>

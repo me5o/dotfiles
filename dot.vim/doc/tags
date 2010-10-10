@@ -10,6 +10,7 @@ YRClear-example	yankring.txt	/*YRClear-example*
 YRDeleteRange	yankring.txt	/*YRDeleteRange*
 YRGetElem	yankring.txt	/*YRGetElem*
 YRGetMultiple	yankring.txt	/*YRGetMultiple*
+YRGetMultiple-example	yankring.txt	/*YRGetMultiple-example*
 YRMapsCreate	yankring.txt	/*YRMapsCreate*
 YRMapsDelete	yankring.txt	/*YRMapsDelete*
 YRPaste	yankring.txt	/*YRPaste*
@@ -275,6 +276,7 @@ yankring-commands	yankring.txt	/*yankring-commands*
 yankring-configure	yankring.txt	/*yankring-configure*
 yankring-contents	yankring.txt	/*yankring-contents*
 yankring-custom-maps	yankring.txt	/*yankring-custom-maps*
+yankring-custom-menus	yankring.txt	/*yankring-custom-menus*
 yankring-description	yankring.txt	/*yankring-description*
 yankring-globals	yankring.txt	/*yankring-globals*
 yankring-history	yankring.txt	/*yankring-history*
