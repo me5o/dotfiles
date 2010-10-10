@@ -1,10 +1,10 @@
-" 
+"
 " init
 "
 
 set nocompatible    " vim 拡張機能ON
 syntax on           " 色づけON
-filetype on         
+filetype on
 filetype indent on
 filetype plugin on
 
@@ -58,20 +58,26 @@ highlight PmenuSbar ctermbg=LightGray guibg=LightGray
 highlight PmenuThumb ctermbg=White guibg=White
 
 " 全角空白と行末の空白の色を変える
-highlight WideSpace ctermbg=blue guibg=blue
-highlight EOLSpace ctermbg=red guibg=red
-
-function! s:HighlightSpaces()
-  syntax match WideSpace /　/ containedin=ALL
-  syntax match EOLSpace /\s\+$/ containedin=ALL
+function! ActivateInvisibleIndicator()
+    " 全角スペース　のハイライトが効かない。。
+    syntax match InvisibleJISX0208Space "　" display containedin=ALL
+    highlight InvisibleJISX0208Space term=underline ctermbg=Red guibg=Red
+    syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
+    highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=Red
 endf
+augroup invisible
+    autocmd! invisible
+    autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+augroup END
 
-call s:HighlightSpaces()
-autocmd WinEnter * call s:HighlightSpaces()
 
 " 挿入モード時、ステータスラインの色を変える
 autocmd InsertEnter * highlight StatusLine ctermfg=red guibg=red
 autocmd InsertLeave * highlight StatusLine ctermfg=white guibg=white
+
+" カーソル行をハイライト
+set cursorline
+highlight CursorLine cterm=underline gui=underline guibg=NONE
 
 "
 " 検索
@@ -80,7 +86,7 @@ autocmd InsertLeave * highlight StatusLine ctermfg=white guibg=white
 " 検索時に大文字小文字を無視
 set ignorecase
 " が、大文字が入っている場合は無視しない
-set incsearch
+set smartcase
 " インクリメンタルサーチON
 set incsearch
 " ハイライトするが、ESC*2で消す
@@ -101,7 +107,7 @@ map  <A-v> "+gP
 imap <A-v> <ESC><ESC>"+gPa
 cmap <A-v> <C-R>*
 
-"<C-Space>でomni補完 
+"<C-Space>でomni補完
 imap <C-Space> <C-x><C-o>
 
 " Yで行末までヤンク
@@ -112,8 +118,8 @@ function! YRRunAfterMaps()
 endfunction
 
 " バッファ移動
-map <F2> :bnext<CR>
-map <F3> :bprevious<CR>
+map <C-L> :bnext<CR>
+map <C-H> :bprevious<CR>
 
 " テキスト整形
 nmap Q JxVgq

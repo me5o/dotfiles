@@ -1,14 +1,9 @@
 " カラースキーマ設定
 colorscheme bensday
+" スキーマで上書きされるので再設定
+highlight CursorLine cterm=underline gui=underline guibg=NONE
 
 set guioptions-=aegimrLtT
-
-" カーソル行をハイライト
-highlight CursorLine guibg=gray20
-
-" タブ移動
-map <C-L> gt
-map <C-H> gT
 
 " 終了時の位置、サイズを記憶
 let g:save_window_file = expand('~/.vimwinpos')
