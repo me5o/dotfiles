@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <input name="" type="text" size="">
+      <input name="commit" type="submit" value="OK">
+      <input name="clear" type="reset" value="Reset">
+    </form>
+  </body>
+</html>

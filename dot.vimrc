@@ -172,6 +172,20 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 
+" Read Template
+"function read_template
+"    let list = expand("$HOME/.vim/template/*.txt")
+"    let items = split(list, "\n")
+"    for item in items
+"        tpl = split(item, '\.')[0]
+"        execute "autocmd BuffNewFile *." . tpl . "0r " . item
+"    endfor
+"endfunction
+"call read_template()
+autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
+autocmd BufNewFile *.rb   0r $HOME/.vim/template/rb.txt
+autocmd BufNewFile *.erb  0r $HOME/.vim/template/html.txt
+
 if has('win32')
   " ヤンクしたときにもクリップボードへもヤンク
   set clipboard=unnamed

@@ -1,0 +1,8 @@
+#!/opt/local/bin/ruby -Ku
+
+require 'rubygems'
+
+
+if $0 == __FILE__
+
+end
