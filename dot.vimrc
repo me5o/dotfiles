@@ -26,6 +26,8 @@ set expandtab
 set backspace=indent,eol,start
 " ステータスライン表示
 set laststatus=2
+" バッファを切り替えてもundo等がリセットされないように
+set hidden
 
 " 以前開いていたときのカーソル位置を復元する
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
