@@ -174,6 +174,9 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 
+" Align‚ğ“ú–{ŒêŠÂ‹«‚Åg—p‚·‚é‚½‚ß‚Ìİ’è
+let g:Align_xstrlen = 3
+
 " Read Template
 "function read_template
 "    let list = expand("$HOME/.vim/template/*.txt")
