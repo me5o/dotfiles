@@ -2,6 +2,12 @@
 " init
 "
 
+" for MacVim-KaoryYa
+" http://blogger.splhack.org/2010/11/macvim-kaoriya-20101102.html
+if has('kaoriya')
+  let $RUBY_DLL="/usr/lib/libruby.dylib"
+endif
+
 set nocompatible    " vim 拡張機能ON
 syntax on           " 色づけON
 filetype on
@@ -94,6 +100,12 @@ set incsearch
 " ハイライトするが、ESC*2で消す
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" migemo設定
+" @see http://code.google.com/p/macvim-kaoriya/issues/detail?id=16
+if has ('migemo')
+    set migemo
+    set migemodict=$VIMRUNTIME/dict/migemo-dict
+endif
 
 "
 " command line
