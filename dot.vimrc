@@ -42,9 +42,14 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " encode
 "
 set encoding=utf-8
-set fileencodings=utf-8,cp932,eucjp,iso2022jp
 set fileformats=unix,dos,mac
 
+" gauche_guess により、自動的に文字コードの判別を行います。
+" fileencodings(fencs) は設定不要です。
+" .vimrcなどでfileencodings(fencs)を設定すると文字コード判別が動作しなくなります。
+if !has('kaoriya')
+  set fileencodings=utf-8,cp932,eucjp,iso2022jp
+endif
 
 "
 " UI 設定
