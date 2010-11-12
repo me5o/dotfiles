@@ -2,6 +2,12 @@
 " init
 "
 
+" for MacVim-KaoryYa
+" http://blogger.splhack.org/2010/11/macvim-kaoriya-20101102.html
+if has('kaoriya')
+  let $RUBY_DLL="/usr/lib/libruby.dylib"
+endif
+
 set nocompatible    " vim 拡張機能ON
 syntax on           " 色づけON
 filetype on
@@ -36,9 +42,14 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " encode
 "
 set encoding=utf-8
-set fileencodings=utf-8,cp932,eucjp,iso2022jp
 set fileformats=unix,dos,mac
 
+" gauche_guess により、自動的に文字コードの判別を行います。
+" fileencodings(fencs) は設定不要です。
+" .vimrcなどでfileencodings(fencs)を設定すると文字コード判別が動作しなくなります。
+if !has('kaoriya')
+  set fileencodings=utf-8,cp932,eucjp,iso2022jp
+endif
 
 "
 " UI 設定
@@ -94,6 +105,12 @@ set incsearch
 " ハイライトするが、ESC*2で消す
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" migemo設定
+" @see http://code.google.com/p/macvim-kaoriya/issues/detail?id=16
+if has ('migemo')
+    set migemo
+    set migemodict=$VIMRUNTIME/dict/migemo-dict
+endif
 
 "
 " command line
