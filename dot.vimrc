@@ -208,6 +208,13 @@ autocmd BufNewFile *.html 0r $HOME/.vim/template/html.txt
 autocmd BufNewFile *.rb   0r $HOME/.vim/template/rb.txt
 autocmd BufNewFile *.erb  0r $HOME/.vim/template/html.txt
 
+"
+" Tohtml option
+"
+let g:use_xhtml = 1
+let g:html_use_css = 1
+let g:html_no_pre = 1
+
 if has('win32')
   " ヤンクしたときにもクリップボードへもヤンク
   set clipboard=unnamed
