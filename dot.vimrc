@@ -215,6 +215,11 @@ let g:use_xhtml = 1
 let g:html_use_css = 1
 let g:html_no_pre = 1
 
+"
+" neocomplcache
+"
+let g:neocomplcache_enable_at_startup = 1
+
 if has('win32')
   " ヤンクしたときにもクリップボードへもヤンク
   set clipboard=unnamed
