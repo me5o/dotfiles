@@ -219,6 +219,14 @@ let g:html_no_pre = 1
 " neocomplcache
 "
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+"let g:neocomplcache_min_syntax_length = 3 "default 4
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 if has('win32')
   " ヤンクしたときにもクリップボードへもヤンク
